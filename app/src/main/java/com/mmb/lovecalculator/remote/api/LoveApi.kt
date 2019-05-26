@@ -10,7 +10,7 @@ interface LoveApi {
     fun calculate(
         @Query("fname") firstName: String,
         @Query("sname") secondName: String
-    ):Single<ResultDto>
+    ): Single<ResultDto>
 
     companion object {
         const val BASE_URL = "https://love-calculator.p.rapidapi.com"
