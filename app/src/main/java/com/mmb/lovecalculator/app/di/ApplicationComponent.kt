@@ -1,23 +1,25 @@
 package com.mmb.lovecalculator.app.di
 
 import android.app.Application
-import android.view.textclassifier.TextClassification
 import com.mmb.lovecalculator.app.LoveCalculatorApp
+import com.mmb.lovecalculator.app.di.modules.AppModule
+import com.mmb.lovecalculator.app.di.modules.NetworkModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class])
+@Component(modules = [AppModule::class, NetworkModule::class])
 interface ApplicationComponent {
 
     @Component.Builder
-    interface Builder{
+    interface Builder {
         @BindsInstance
-        fun application(app : Application):Builder
-        fun build():ApplicationComponent
+        fun application(app: Application): Builder
+
+        fun build(): ApplicationComponent
     }
 
-    fun inject(app : LoveCalculatorApp)
+    fun inject(app: LoveCalculatorApp)
 
 }

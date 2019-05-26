@@ -3,7 +3,7 @@ package com.mmb.lovecalculator.remote
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface loveApi{
+interface LoveApi{
     @GET("getPercentage")
     fun calculate(@Query("fname") firstName: String , @Query("sname") secondName : String)
     companion object{

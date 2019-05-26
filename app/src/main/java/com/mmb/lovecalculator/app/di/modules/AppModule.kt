@@ -1,4 +1,4 @@
-package com.mmb.lovecalculator.app.di
+package com.mmb.lovecalculator.app.di.modules
 
 import dagger.Module
 
