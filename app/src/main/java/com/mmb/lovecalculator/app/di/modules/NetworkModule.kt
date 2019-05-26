@@ -1,6 +1,6 @@
 package com.mmb.lovecalculator.app.di.modules
 
-import com.mmb.lovecalculator.remote.LoveApi
+import com.mmb.lovecalculator.remote.api.LoveApi
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
