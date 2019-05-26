@@ -1,8 +1,7 @@
-package com.mmb.lovecalculator.app.ui
+package com.mmb.lovecalculator.app.ui.LoveFragment
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.mmb.lovecalculator.data.repository.LoveRepository
 
 class LoveViewModelFactory(private val loveRepository: LoveRepository) : ViewModelProvider.Factory{

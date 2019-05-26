@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface LoveApi {
-    @GET("getPercentage")
+    @GET("/getPercentage?")
     fun calculate(
         @Query("fname") firstName: String,
         @Query("sname") secondName: String

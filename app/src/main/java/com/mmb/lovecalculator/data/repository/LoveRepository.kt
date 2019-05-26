@@ -7,7 +7,7 @@ import io.reactivex.Single
 import javax.inject.Inject
 
 class LoveRepository @Inject constructor(private val loveRemoteDataSource: LoveRemoteDataSource){
-    fun caculate(firstName:String , secondName:String):Single<ResultEntity>{
+    fun calculate(firstName:String , secondName:String):Single<ResultEntity>{
         return loveRemoteDataSource.calculate(firstName,secondName).map {
             it.toResultEntity()
         }

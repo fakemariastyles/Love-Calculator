@@ -1,4 +1,4 @@
-package com.mmb.lovecalculator.app.ui
+package com.mmb.lovecalculator.app.ui.LoveFragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -14,11 +14,13 @@ class LoveViewModel @Inject constructor
     private val _result = MutableLiveData<ResultEntity>()
     var result : LiveData<ResultEntity> = _result
     fun calculate(firstName: String , secondName: String){
-        loveRepository.caculate(firstName,secondName)
+        loveRepository.calculate(firstName,secondName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 _result.postValue(it)
-            },{})
+            },{
+                println(it)
+            })
     }
 }
