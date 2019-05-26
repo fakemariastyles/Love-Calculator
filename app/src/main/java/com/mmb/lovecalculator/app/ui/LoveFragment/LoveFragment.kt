@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.mmb.lovecalculator.R
 import com.mmb.lovecalculator.app.LoveCalculatorApp
+import com.mmb.lovecalculator.app.ui.ResultFragment.ResultFragment
 import com.mmb.lovecalculator.remote.dto.ResultDto
 import javax.inject.Inject
 
@@ -33,12 +34,20 @@ class LoveFragment : Fragment() {
         calculateButton = view.findViewById(R.id.calculate)
 
         calculateButton?.setOnClickListener {
-            println("got here")
-            viewModel.calculate(firstName?.text.toString(),secondName?.text.toString())
+            viewModel.calculate(firstName?.text.toString(), secondName?.text.toString())
         }
         viewModel.apply {
             result.observe(this@LoveFragment, Observer {
                 println(it)
+                fragmentManager?.beginTransaction()
+                    ?.replace(
+                        R.id.content_frame, ResultFragment.newInstance(
+                            it.result.toString()
+                            , it.percentage.toString()
+                        )
+                    )
+                    ?.addToBackStack(null)
+                    ?.commit()
             })
         }
     }
