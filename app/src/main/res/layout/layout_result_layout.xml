@@ -5,6 +5,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+    <ImageView
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:src="@mipmap/result" android:scaleType="fitXY" />
 
     <TextView
             android:layout_width="wrap_content"
@@ -12,6 +15,7 @@
             tools:text="70%"
             app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/result"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
