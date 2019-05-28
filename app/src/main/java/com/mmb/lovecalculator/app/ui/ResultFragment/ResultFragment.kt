@@ -33,7 +33,6 @@ class ResultFragment : Fragment() {
         resultText.text = result ?: "No result found"
 
     }
-
     companion object {
         fun newInstance(result: String, percentage: String): ResultFragment {
             return ResultFragment().apply {

@@ -1,6 +1,7 @@
 package com.mmb.lovecalculator.app.ui.LoveFragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,21 +26,11 @@ class LoveFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         LoveCalculatorApp.component.inject(this)
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        firstName = view.findViewById(R.id.firstName)
-        secondName = view.findViewById(R.id.secondName)
-        calculateButton = view.findViewById(R.id.calculate)
-
-        calculateButton?.setOnClickListener {
-            viewModel.calculate(firstName?.text.toString(), secondName?.text.toString())
-        }
         viewModel.apply {
             result.observe(this@LoveFragment, Observer {
-                println(it)
-                fragmentManager?.beginTransaction()
+                Log.d("SS", "observe")
+                activity?.supportFragmentManager?.beginTransaction()
                     ?.replace(
                         R.id.content_frame, ResultFragment.newInstance(
                             it.result.toString()
@@ -50,6 +41,21 @@ class LoveFragment : Fragment() {
                     ?.commit()
             })
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        Log.d("SS", "onViewCreated");
+
+        firstName = view.findViewById(R.id.firstName)
+        secondName = view.findViewById(R.id.secondName)
+        calculateButton = view.findViewById(R.id.calculate)
+
+        calculateButton?.setOnClickListener {
+            viewModel.calculate(firstName?.text.toString(), secondName?.text.toString())
+        }
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
