@@ -21,7 +21,7 @@ class LoveRepository @Inject constructor(
         resultLocalDataSource.insert(result.toLocalResult())
     }
 
-    fun getAll(): Single<List<ResultEntity>>{
+    fun getRecents(): Single<List<ResultEntity>>{
         return Single.fromCallable {
             resultLocalDataSource.getAll().map {
                 it.toResultEntity()

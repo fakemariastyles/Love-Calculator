@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_margin="20dp"
+        android:background="#F3A5BE"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+    <TextView
+            android:padding="8dp"
+            tools:text="First Name"
+            android:id="@+id/firstNameResult"
+            app:layout_constraintVertical_chainStyle="spread"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/secondNameResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:padding="8dp"
+            tools:text="Second Name"
+            android:id="@+id/secondNameResult"
+            app:layout_constraintStart_toEndOf="@+id/firstNameResult"
+            app:layout_constraintEnd_toEndOf="@+id/percentageResult"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+            android:padding="8dp"
+            tools:text="Percentage"
+            android:id="@+id/percentageResult"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/secondNameResult"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

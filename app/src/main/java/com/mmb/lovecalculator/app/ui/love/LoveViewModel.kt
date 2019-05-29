@@ -29,7 +29,7 @@ class LoveViewModel @Inject constructor
 
 
     fun getResultsFromDataBase(){
-        loveRepository.getAll()
+        loveRepository.getRecents()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
