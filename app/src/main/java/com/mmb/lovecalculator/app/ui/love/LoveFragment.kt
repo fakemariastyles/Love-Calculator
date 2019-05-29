@@ -1,4 +1,4 @@
-package com.mmb.lovecalculator.app.ui.LoveFragment
+package com.mmb.lovecalculator.app.ui.love
 
 import android.os.Bundle
 import android.util.Log
@@ -10,8 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.mmb.lovecalculator.R
 import com.mmb.lovecalculator.app.LoveCalculatorApp
-import com.mmb.lovecalculator.app.ui.ResultFragment.ResultFragment
-import com.mmb.lovecalculator.remote.dto.ResultDto
+import com.mmb.lovecalculator.app.ui.result.ResultFragment
 import javax.inject.Inject
 
 

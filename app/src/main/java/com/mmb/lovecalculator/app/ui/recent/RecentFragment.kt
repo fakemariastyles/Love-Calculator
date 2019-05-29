@@ -1,4 +1,4 @@
-package com.mmb.lovecalculator.app.ui.RecentFragment
+package com.mmb.lovecalculator.app.ui.recent
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

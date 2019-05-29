@@ -1,4 +1,4 @@
-package com.mmb.lovecalculator.app.ui.LoveFragment
+package com.mmb.lovecalculator.app.ui.love
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

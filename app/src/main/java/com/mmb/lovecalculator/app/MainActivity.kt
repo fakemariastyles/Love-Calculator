@@ -5,8 +5,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.mmb.lovecalculator.R
-import com.mmb.lovecalculator.app.ui.LoveFragment.LoveFragment
-import com.mmb.lovecalculator.app.ui.RecentFragment.RecentFragment
+import com.mmb.lovecalculator.app.ui.love.LoveFragment
+import com.mmb.lovecalculator.app.ui.recent.RecentFragment
 import com.mmb.lovecalculator.data.repository.LoveRepository
 import javax.inject.Inject
 

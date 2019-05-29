@@ -1,4 +1,4 @@
-package com.mmb.lovecalculator.app.ui.ResultFragment
+package com.mmb.lovecalculator.app.ui.result
 
 import android.os.Bundle
 import android.view.LayoutInflater
