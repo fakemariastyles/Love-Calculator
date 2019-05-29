@@ -21,12 +21,12 @@ class LoveFragment : Fragment() {
     var firstName: EditText? = null
     var secondName: EditText? = null
     var calculateButton: View? = null
-    var result: ResultDto? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        println("got here")
         LoveCalculatorApp.component.inject(this)
-
+        Log.e("SS" , "onCreate")
         viewModel.apply {
             result.observe(this@LoveFragment, Observer {
                 Log.d("SS", "observe")
@@ -56,6 +56,12 @@ class LoveFragment : Fragment() {
             viewModel.calculate(firstName?.text.toString(), secondName?.text.toString())
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        firstName?.setText("")
+        secondName?.setText("")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
