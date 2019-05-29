@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "result")
 data class LocalResult (
-    @PrimaryKey val id:Int,
+    @PrimaryKey(autoGenerate = true) val id:Int,
     val firstName: String?,
     val secondName:String?,
     val result: String?,

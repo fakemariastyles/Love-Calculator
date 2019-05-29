@@ -17,10 +17,23 @@ class LoveViewModel @Inject constructor
         loveRepository.calculate(firstName,secondName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSuccess {
+//                loveRepository.insertResult(it)
+            }
             .subscribe({
                 _result.postValue(it)
             },{
                 println(it)
             })
+    }
+
+
+    fun getResultsFromDataBase(){
+        loveRepository.getAll()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                println(it)
+            } , {})
     }
 }
