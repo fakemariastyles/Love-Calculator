@@ -16,10 +16,10 @@ class LoveViewModel @Inject constructor
     fun calculate(firstName: String , secondName: String){
         loveRepository.calculate(firstName,secondName)
             .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
             .doOnSuccess {
-//                loveRepository.insertResult(it)
+                loveRepository.insertResult(it)
             }
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 _result.postValue(it)
             },{

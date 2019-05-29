@@ -24,9 +24,9 @@ class LoveFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        viewModel.getResultsFromDataBase()
         LoveCalculatorApp.component.inject(this)
         Log.e("SS" , "onCreate")
+        viewModel.getResultsFromDataBase()
         viewModel.apply {
             result.observe(this@LoveFragment, Observer {
                 Log.d("SS", "observe")
