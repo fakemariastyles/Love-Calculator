@@ -26,5 +26,4 @@ interface ApplicationComponent {
     fun inject(loveFragment: LoveFragment)
     fun inject(resultFragment: ResultFragment)
     fun inject(recentFragment: RecentFragment)
-
 }

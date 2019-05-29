@@ -11,7 +11,7 @@ import com.mmb.lovecalculator.data.repository.LoveRepository
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
-    @Inject private lateinit var loveRepository:LoveRepository
+    @Inject lateinit var loveRepository:LoveRepository
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
