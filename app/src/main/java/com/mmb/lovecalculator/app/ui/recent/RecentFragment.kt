@@ -7,6 +7,7 @@ import javax.inject.Inject
 
 class RecentFragment :Fragment(){
     @Inject lateinit var loveRepository: LoveRepository
+    @Inject lateinit var
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
