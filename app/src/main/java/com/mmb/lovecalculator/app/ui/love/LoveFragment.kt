@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -55,13 +56,13 @@ class LoveFragment : Fragment() {
             viewModel.calculate(firstName?.text.toString(), secondName?.text.toString())
         }
 
+        view.findViewById<Button>(R.id.clear).setOnClickListener{
+            firstName?.setText("")
+            secondName?.setText("")
+        }
+
     }
 
-    override fun onResume() {
-        super.onResume()
-        firstName?.setText("")
-        secondName?.setText("")
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.layout_love_fragment_layout, container, false)
